@@ -23,22 +23,22 @@
 
         </div>--%>
        <%--info cliente--%>
-        <div>
-            <asp:Label ID="lblRazonSocial" runat="server" Text="Razón Social"></asp:Label>
-            <asp:TextBox ID="txtRazonSocial" runat="server"></asp:TextBox><br/>
-            <asp:Label ID="lblFechaEmision" runat="server" Text="Fecha Emisión"></asp:Label>
-            <asp:TextBox ID="txtFechaEmision" runat="server"></asp:TextBox><br/>
-            <asp:Label ID="lblIdentificacion" runat="server" Text="Identificación"></asp:Label>
-            <asp:TextBox ID="txtIdentificacion" runat="server"></asp:TextBox><br/>
-            <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
-            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox><br/>
-            <asp:Button ID="btnAgregarCli" runat="server" Text="Agregar Nuevo Cli" OnClick="btnAgregarCli_Click"  />
-            <br/>
-            <asp:ListBox ID="ltbCliente" runat="server"></asp:ListBox>
-            <br/>
-            <asp:Button ID="btnCliente" runat="server" Text="Cliente JSON" OnClick="btnCliente_Click"  />
-        </div>
-        <br/><br/>
+            <div>
+                <asp:Label ID="lblRazonSocial" runat="server" Text="Razón Social"></asp:Label>
+                <asp:TextBox ID="txtRazonSocial" runat="server"></asp:TextBox><br/>
+                <asp:Label ID="lblFechaEmision" runat="server" Text="Fecha Emisión"></asp:Label>
+                <asp:TextBox ID="txtFechaEmision" runat="server"></asp:TextBox><br/>
+                <asp:Label ID="lblIdentificacion" runat="server" Text="Identificación"></asp:Label>
+                <asp:TextBox ID="txtIdentificacion" runat="server"></asp:TextBox><br/>
+                <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
+                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox><br/>
+                <asp:Button ID="btnAgregarCli" runat="server" Text="Agregar Nuevo Cli" OnClick="btnAgregarCli_Click"  />
+                <br/>
+                <asp:ListBox ID="ltbCliente" runat="server"></asp:ListBox>
+                <br/>
+                <asp:Button ID="btnCliente" runat="server" Text="Cliente JSON" OnClick="btnCliente_Click"  />
+            </div>
+            <br/><br/>
         <%--info factura--%>
         <div>
             <asp:Label ID="lblNroFactura" runat="server" Text="Nro. Factura Electrónica"></asp:Label>
