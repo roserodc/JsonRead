@@ -7,8 +7,9 @@ namespace JSON
 {
     public class Persona
     {
-        public string nombre { get; set; }
-        public int edad { get; set; }
+        public string RazonSocial { get; set; }
+        public string FechaEmision { get; set; }
+        public string Identificacion { get; set; }
         public string email { get; set; }
     }
 }

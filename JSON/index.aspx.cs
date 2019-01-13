@@ -15,34 +15,77 @@ namespace JSON
 
         }
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
+        
+        //protected void btnJson_Click(object sender, EventArgs e)
+        //{
+        //    File.WriteAllText(@"C:\json\aspnetJSON.json","["+Session["ARCHIVOJSON"].ToString().ToString()+ "]");
+        //    Response.Write("<script>alert('json listo');</script>");
+
+        //}
+
+        protected void btnAgregarCli_Click(object sender, EventArgs e)
         {
             Persona persona = new Persona
             {
-                nombre = txtNombre.Text,
-                edad = Convert.ToInt32(txtEdad.Text),
+                RazonSocial = txtRazonSocial.Text,
+                FechaEmision = txtFechaEmision.Text,
+                Identificacion = txtIdentificacion.Text,
                 email = txtEmail.Text
             };
-            txtNombre.Text="";
-            txtEdad.Text = "";
+            txtRazonSocial.Text = "";
+            txtFechaEmision.Text = "";
+            txtIdentificacion.Text = "";
             txtEmail.Text = "";
 
             if (Session["ARCHIVOJSON"].ToString() == string.Empty)
                 Session["ARCHIVOJSON"] = JsonConvert.SerializeObject(persona);
             else
-                Session["ARCHIVOJSON"] = Session["ARCHIVOJSON"].ToString() + ","+JsonConvert.SerializeObject(persona);
+                Session["ARCHIVOJSON"] = Session["ARCHIVOJSON"].ToString() + "," + JsonConvert.SerializeObject(persona);
 
-            ltbPersona.Items.Add("Nombre" + persona.nombre +
-                                "edad" + persona.edad +
-                                "email" + persona.email);
-
+            ltbCliente.Items.Add("Razon Social: " + persona.RazonSocial +
+                                "Fecha Emision: " + persona.FechaEmision +
+                                "Identificacion: " + persona.Identificacion +
+                                "Email: " + persona.email);
         }
 
-        protected void btnJson_Click(object sender, EventArgs e)
+        protected void btnAgregarFact_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(@"C:\json\aspnetJSON.json","["+Session["ARCHIVOJSON"].ToString().ToString()+ "]");
-            Response.Write("<script>alert('json listo');</script>");
+            Factura factura = new Factura
+            {
+                NroFactura = Convert.ToInt32(txtNroFactura.Text),
+                Subtotal = Convert.ToInt32(txtNroFactura.Text),
+                IVA = Convert.ToInt32(txtNroFactura.Text),
+                Total = Convert.ToInt32(txtNroFactura.Text),
+                FormaPago =txtFormaPago.Text
+            };
+            txtNroFactura.Text = "";
+            txtSubtotal.Text = "";
+            txtIVA.Text = "";
+            txtTotal.Text = "";
+            txtFormaPago.Text = "";
 
+            if (Session["ARCHIVOJSON"].ToString() == string.Empty)
+                Session["ARCHIVOJSON"] = JsonConvert.SerializeObject(factura);
+            else
+                Session["ARCHIVOJSON"] = Session["ARCHIVOJSON"].ToString() + "," + JsonConvert.SerializeObject(persona);
+
+            ltbCliente.Items.Add("NroFactura: " + factura.NroFactura +
+                                " Subtotal: " + factura.Subtotal +
+                                "IVA: " + factura.IVA +
+                                "Total: " + factura.Total+
+                                "FormaPago: " + factura.FormaPago);
+        }
+
+        protected void btnCliente_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(@"C:\json\JsonClientes.json", "[" + Session["ARCHIVOJSON"].ToString().ToString() + "]");
+            Response.Write("<script>alert('json listo');</script>");
+        }
+
+        protected void btnFactura_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(@"C:\json\JsonFacturas.json", "[" + Session["ARCHIVOJSON"].ToString().ToString() + "]");
+            Response.Write("<script>alert('json listo');</script>");
         }
     }
 }
